@@ -7,10 +7,12 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
-  <view bindtap="jumpToJpword">
-    <text>N4日语单词</text>
+  <view class="nav-list">
+    <view class="nav-list-item green" bindtap="jumpToJpword">
+      <text>五十音</text>
+    </view>
+    <view class="nav-list-item blue" bindtap="jumpToJpword">
+      <text>N4日语单词</text>
+    </view>
   </view>
 </view>

@@ -1,6 +1,8 @@
 // miniprogram/pages/jpword.js
 import words from './words'
 
+
+const groupIndexes = []
 Page({
 
   /**
@@ -8,23 +10,58 @@ Page({
    */
   data: {
     index: -1,
-    word: null
+    word: null,
+    groupIndex: -1,
   },
 
   nextWord () {
-    const idx = this.data.index === words.length - 1 ? 0 : this.data.index + 1
-    this.setWord(idx)
+    let idx = this.data.index + 1
+    let gIdx = this.data.groupIndex
+    let allIdx = groupIndexes[gIdx] + idx
+
+    if (allIdx === words.length) {
+      idx = 0
+      gIdx = 0
+    }
+    else if (allIdx === groupIndexes[gIdx + 1]) {
+      idx = 0
+      gIdx = gIdx + 1
+    }
+    this.setWord(gIdx, idx)
   },
 
   prevWord () {
-    const idx = this.data.index === 0 ? words.length - 1 : this.data.index - 1
-    this.setWord(idx)
+    let idx = this.data.index - 1
+    let gIdx = this.data.groupIndex
+    let allIdx = groupIndexes[gIdx] + idx
+    
+    if (allIdx === -1) {
+      gIdx = groupIndexes.length - 1
+      idx = words.length - groupIndexes.slice(-1)[0] - 1
+    }
+    else if (allIdx === groupIndexes[gIdx - 1]) {
+      gIdx = gIdx - 1
+      idx = allIdx - groupIndexes[gIdx - 1] - 1
+    }
+
+
+    this.setWord(gIdx, idx)
   },
 
-  setWord (idx) {
+  nextGroup () {
+    const gIdx = this.data.groupIndex === groupIndexes.length - 1 ? 0 : this.data.groupIndex + 1
+    this.setWord(gIdx, 0)
+  },
+  prevGroup () {
+    const gIdx = this.data.groupIndex === 0 ? groupIndexes.length - 1 : this.data.groupIndex - 1
+    this.setWord(gIdx, 0)
+  },
+
+  setWord (gIdx, idx) {
     this.setData({
       index: idx,
-      word: words[idx],
+      groupIndex: gIdx,
+      word: words[groupIndexes[gIdx] + idx],
     })
   },
 
@@ -39,8 +76,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    let currentGroup = ''
+    words.forEach((word, i) => {
+      if (word.group !== currentGroup) {
+        currentGroup = word.group
+        groupIndexes.push(i)
+      }
+    })
+
     this.setData({
       index: 0,
+      groupIndex: 0,
       word: words[0]
     })
   },

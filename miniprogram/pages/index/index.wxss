@@ -1,4 +1,12 @@
 /**index.wxss**/
+.test-color {
+  background-color: #555;
+}
+
+.nav-list {
+  flex: 1;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,7 +26,30 @@
   margin-bottom: 100rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.nav-list {
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 0 4px;
+}
+
+.nav-list-item {
+  flex: 1;
+  margin: 0 4px;
+  height: 20vw;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+
+.green {
+  color: #85d0cc;
+  background-color: #ceeceb;
+}
+.blue {
+  color: #94d0fd;
+  background: #d4ecfe;
 }
 
