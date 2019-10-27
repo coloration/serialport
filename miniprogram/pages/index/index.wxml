@@ -8,11 +8,16 @@
     </block>
   </view>
   <view class="nav-list">
-    <view class="nav-list-item green" bindtap="jumpToJpword">
+    <view class="nav-list-item blue" bindtap="jumpToFifty">
       <text>五十音</text>
     </view>
-    <view class="nav-list-item blue" bindtap="jumpToJpword">
-      <text>N4日语单词</text>
+    <view class="nav-list-item green" bindtap="jumpToJpword">
+      <text>N4単語</text>
+    </view>
+  </view>
+  <view class="nav-list">
+    <view class="nav-list-item red" bindtap="jumpToJpword">
+      <text>外来語</text>
     </view>
   </view>
 </view>

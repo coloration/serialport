@@ -1,0 +1,54 @@
+/* miniprogram/pages/fifty.wxss */
+.jp-fifty .head {
+  flex: 1;
+  width: 100vw;
+
+}
+
+.jp-fifty .head .count {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5.5vw;
+}
+
+.jp-fifty .head .count text {
+  font-size: 10vw;
+  font-weight: 800;
+  color: #444;
+}
+
+.jp-fifty .head .count .border {
+  width: 2vw;
+  height: 10vw;
+  margin-left: 3vw;
+  background-color: #94d0fd;
+}
+
+
+
+
+.jp-fifty .box {
+  display: flex;
+  height: 100vw;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 4vw;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.jp-fifty .box view {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.5vw;
+}
+
+.jp-fifty .box text {
+  font-size: 8vw;
+}

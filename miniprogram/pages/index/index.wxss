@@ -44,12 +44,4 @@
   border-radius: 2px;
 }
 
-.green {
-  color: #85d0cc;
-  background-color: #ceeceb;
-}
-.blue {
-  color: #94d0fd;
-  background: #d4ecfe;
-}
 

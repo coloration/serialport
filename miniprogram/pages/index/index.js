@@ -18,6 +18,11 @@ Page({
             url: '../jpword/jpword'
         });
     },
+    jumpToFifty: function () {
+        wx.navigateTo({
+            url: '../fifty/fifty'
+        })
+    },
     onLoad: function () {
         var _this = this;
         if (app.globalData.userInfo) {
