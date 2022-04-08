@@ -1,33 +1,17 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "module": "CommonJS",
-    "target": "ES5",
-    "allowJs": false,
-    "experimentalDecorators": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": true,
-    "alwaysStrict": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "baseUrl": "./",
     "strict": true,
-    "removeComments": true,
-    "pretty": true,
-    "strictPropertyInitialization": true,
-    "typeRoots": [
-      "./typings"
-    ]
-  },
-  "include": [
-    "./miniprogram/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "miniprogram_dist",
-    "**/*.spec.ts"
-  ]
+    "paths": {},
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  }
 }

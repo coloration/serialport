@@ -1,0 +1,35 @@
+{
+  "signal": "ws",
+  "unit": "",
+  "protocol": "rs485",
+  "readInterval": 2,
+  "readCommand": "",
+  "calcRatio": 1,
+  "calcOffset": 0,
+  "warning": 20000,
+  "fixcount": 2,
+  "buses": [
+    {
+      "name": "线路1",
+      "uri": "192.168.0.7:6432",
+      "clients": [
+        {
+          "address": 1,
+          "unit": "摄氏度",
+          "warning": 24,
+          "calcRatio": 0.1,
+          "readCommand": "0300000001",
+          "name": "温度传感器1"
+        },
+        {
+          "address": 2,
+          "unit": "ug/m^3",
+          "warning": 300,
+          "calcRatio": 1,
+          "readCommand": "0300000001",
+          "name": "粉尘传感器1"
+        }
+      ]
+    }
+  ]
+}
