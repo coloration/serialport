@@ -71,7 +71,7 @@ export enum RequestType {
 
 
   SERIALPORT_LIST,
-
+  SERIALPORT_OPEN,
 }
 
 export enum IotNodeSignal {

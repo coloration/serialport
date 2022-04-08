@@ -11,3 +11,7 @@ regist(RequestType.SERIALPORT_LIST, (e: any) => {
   })
   
 })
+
+regist(RequestType.SERIALPORT_OPEN, (e: any) => {
+  
+})

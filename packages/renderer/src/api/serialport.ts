@@ -9,6 +9,10 @@ export function serialsend () {
 
 }
 
-export function serialListen () {
+export function serialOpen (params: any) {
+  return request(RequestType.SERIALPORT_LIST)
+}
+
+export function serialListen (cb: Function) {
   
 }

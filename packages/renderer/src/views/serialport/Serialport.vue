@@ -2,7 +2,7 @@
 import { ILayout, ILabel, ISelect, IButton, ITextarea, IFlexRow, IRadio, IText, IHangText, IBadge } from '@coloration/island'
 import { onMounted, ref } from 'vue'
 import { numberPrefix, curry } from '@coloration/kit'
-import { serialportList } from '../../api'
+import { serialListen, serialportList } from '../../api'
 import { PortInfo } from '../../../../types'
 
 enum ContentType {
@@ -89,6 +89,11 @@ onMounted(() => {
     }
 
   })
+
+  serialListen(() => {
+    
+  })
+
 })
 
 </script>
@@ -159,7 +164,7 @@ onMounted(() => {
         <IRadio value="HEX" v-model="sendType">
           <IText size="xs">HEX</IText>
         </IRadio>
-        <IButton block size="sm" @click="handleSend">
+        <IButton block size="sm" @click="handleSend" :disabled="portInfo.status === 0">
           Send
         </IButton>
       </div>
